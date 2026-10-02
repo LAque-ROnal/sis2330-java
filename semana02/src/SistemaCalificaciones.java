@@ -54,4 +54,28 @@ public class SistemaCalificaciones {
     static String estado(double promedio) {
         return promedio >= 51 ? "Aprobado" : "Reprobado";
     }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] nombres = {"Ana", "Luis", "Marta", "Kevin", "Sofia"};
+        double[][] notas = new double[5][3];
+
+        for (int i = 0; i < nombres.length; i++) {
+            System.out.println("--- Notas de " + nombres[i] + " ---");
+            for (int j = 0; j < 3; j++) {
+                notas[i][j] = leerNotaValida(sc, "Nota " + (j + 1) + ": ");
+            }
+        }
+
+        System.out.println("\n==== REPORTE FINAL ====");
+        for (int i = 0; i < nombres.length; i++) {
+            double prom = promedio(notas[i]);
+            double max = maximo(notas[i]);
+            double min = minimo(notas[i]);
+            String est = estado(prom);
+            System.out.printf("%s -> promedio: %.2f, max: %.2f, min: %.2f, estado: %s%n",
+                    nombres[i], prom, max, min, est);
+        }
+        sc.close();
+    }
 }
