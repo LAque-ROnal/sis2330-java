@@ -38,4 +38,41 @@ public class GestorTareas {
         boolean eliminado = tareas.removeIf(t -> t.getId() == id);
         System.out.println(eliminado ? "Tarea eliminada." : "No existe una tarea con ID " + id);
     }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        boolean salir = false;
+        while (!salir) {
+            System.out.println("\n1) Agregar 2) Listar 3) Completar 4) Eliminar 5) Salir");
+            System.out.print("Opcion: ");
+            int opcion;
+            try {
+                opcion = sc.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Ingrese un numero valido.");
+                sc.next();
+                continue;
+            }
+            sc.nextLine(); // consume el salto de linea pendiente
+
+            switch (opcion) {
+                case 1 -> {
+                    System.out.print("Descripcion: ");
+                    agregar(sc.nextLine());
+                }
+                case 2 -> listar();
+                case 3 -> {
+                    System.out.print("ID a completar: ");
+                    completar(sc.nextInt());
+                }
+                case 4 -> {
+                    System.out.print("ID a eliminar: ");
+                    eliminar(sc.nextInt());
+                }
+                case 5 -> salir = true;
+                default -> System.out.println("Opcion invalida.");
+            }
+        }
+        sc.close();
+    }
 }
