@@ -4,11 +4,16 @@
 
 Sistema de estudiantes construido con Maven, con ranking por promedio y suite de pruebas JUnit 5. El proyecto esta en la carpeta `sistema-estudiantes`.
 
-## Como ejecutar
+## Cómo ejecutar
 
-    cd sistema-estudiantes
-    mvn test
-    mvn package
+Desde la carpeta `semana06`, abre la terminal y ejecuta:
+
+cd sistema-estudiantes
+mvn test
+mvn package
+
+Para ejecutar el programa generado:
+java -jar target/sistema-estudiantes-1.0.0.jar
 
 ## Tests incluidos
 
