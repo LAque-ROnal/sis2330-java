@@ -1,4 +1,4 @@
-package com.tareas.gestor_tareas;
+package com.tareas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
