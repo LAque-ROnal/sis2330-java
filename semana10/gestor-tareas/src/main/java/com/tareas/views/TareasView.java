@@ -73,7 +73,10 @@ public class TareasView extends VerticalLayout {
             return;
         }
         if (seleccionActual == null) {
-            servicio.agregar(editable.getDescripcion());
+            Tarea nueva = servicio.agregar(editable.getDescripcion());
+            if (editable.isCompletada()) {
+                servicio.actualizar(new Tarea(nueva.id(), nueva.descripcion(), true));
+            }
         } else {
             servicio.actualizar(new Tarea(seleccionActual.id(),
                     editable.getDescripcion(), editable.isCompletada()));
