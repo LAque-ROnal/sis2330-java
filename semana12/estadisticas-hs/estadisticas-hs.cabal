@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Estadisticas
       Lib
   other-modules:
       Paths_estadisticas_hs
