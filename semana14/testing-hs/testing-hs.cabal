@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Notas
   other-modules:
       Paths_testing_hs
   autogen-modules:
